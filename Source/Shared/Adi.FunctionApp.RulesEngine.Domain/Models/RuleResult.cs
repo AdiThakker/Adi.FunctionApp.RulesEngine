@@ -5,7 +5,12 @@ public class RuleResult
 {
     public RuleContext Context { get; }
 
-    public RuleResult(RuleContext context) => Context = context;
+    public string Status { get; set; }
 
+    public RuleResult(RuleContext context, string status)
+    {
+        Context = context;
+        Status = status;
+    }
 }
 
