@@ -2,7 +2,7 @@
 
 namespace Adi.FunctionApp.RulesEngine.Domain.Models;
 
-internal class ExecutionContext
+public class RuleContext
 {
     // First class properties
     public string Source { get; set; }
@@ -12,6 +12,6 @@ internal class ExecutionContext
     // Dynamic properties
     public Dictionary<string, string> Parameters { get; init; }
 
-    public ExecutionContext() => Parameters = new Dictionary<string, string>(); 
+    public RuleContext() => Parameters = new Dictionary<string, string>(); 
 }
 
