@@ -1,0 +1,75 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{BEA94161-23B8-4497-A760-3170D91E69AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{22707B7B-38B2-493B-897E-D146B883CAA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{D752A4A6-1E47-457C-80BA-DE20DB85956E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".template.config", ".template.config", "{1CA4EFF2-0B7B-42A9-AC1C-47B6971EA43B}"
+	ProjectSection(SolutionItems) = preProject
+		.template.config\template.json = .template.config\template.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adi.FunctionApp.RulesEngine.Documentation", "Documentation\Adi.FunctionApp.RulesEngine.Documentation\Adi.FunctionApp.RulesEngine.Documentation.csproj", "{2D88F919-7CD9-4CF8-A7BF-4ED37D35121F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{47741AE8-B326-4209-9774-02C46E652781}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adi.FunctionApp.RulesEngine.Service", "Source\Adi.FunctionApp.RulesEngine.Service\Adi.FunctionApp.RulesEngine.Service.csproj", "{CA2F4F04-C1CE-4654-A170-CB5118F0016C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adi.FunctionApp.RulesEngine.Domain", "Source\Shared\Adi.FunctionApp.RulesEngine.Domain\Adi.FunctionApp.RulesEngine.Domain.csproj", "{05F5B66C-6567-404F-8BD3-35C177921E26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adi.FunctionApp.RulesEngine.IntegrationTest", "Testing\Adi.FunctionApp.RulesEngine.IntegrationTest\Adi.FunctionApp.RulesEngine.IntegrationTest.csproj", "{DC6ED152-819C-4210-860E-8D11377D6F88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adi.FunctionApp.RulesEngine.UnitTest", "Testing\Adi.FunctionApp.RulesEngine.UnitTest\Adi.FunctionApp.RulesEngine.UnitTest.csproj", "{473B8C62-1E29-4B70-B3D3-EC2CCD1BF85F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CD5526C1-55BD-4D4F-918E-DA66CBF2AA65}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D88F919-7CD9-4CF8-A7BF-4ED37D35121F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D88F919-7CD9-4CF8-A7BF-4ED37D35121F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D88F919-7CD9-4CF8-A7BF-4ED37D35121F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D88F919-7CD9-4CF8-A7BF-4ED37D35121F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA2F4F04-C1CE-4654-A170-CB5118F0016C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA2F4F04-C1CE-4654-A170-CB5118F0016C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA2F4F04-C1CE-4654-A170-CB5118F0016C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA2F4F04-C1CE-4654-A170-CB5118F0016C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05F5B66C-6567-404F-8BD3-35C177921E26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05F5B66C-6567-404F-8BD3-35C177921E26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05F5B66C-6567-404F-8BD3-35C177921E26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05F5B66C-6567-404F-8BD3-35C177921E26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC6ED152-819C-4210-860E-8D11377D6F88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC6ED152-819C-4210-860E-8D11377D6F88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC6ED152-819C-4210-860E-8D11377D6F88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC6ED152-819C-4210-860E-8D11377D6F88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{473B8C62-1E29-4B70-B3D3-EC2CCD1BF85F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{473B8C62-1E29-4B70-B3D3-EC2CCD1BF85F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{473B8C62-1E29-4B70-B3D3-EC2CCD1BF85F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{473B8C62-1E29-4B70-B3D3-EC2CCD1BF85F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2D88F919-7CD9-4CF8-A7BF-4ED37D35121F} = {BEA94161-23B8-4497-A760-3170D91E69AE}
+		{47741AE8-B326-4209-9774-02C46E652781} = {22707B7B-38B2-493B-897E-D146B883CAA0}
+		{CA2F4F04-C1CE-4654-A170-CB5118F0016C} = {22707B7B-38B2-493B-897E-D146B883CAA0}
+		{05F5B66C-6567-404F-8BD3-35C177921E26} = {47741AE8-B326-4209-9774-02C46E652781}
+		{DC6ED152-819C-4210-860E-8D11377D6F88} = {D752A4A6-1E47-457C-80BA-DE20DB85956E}
+		{473B8C62-1E29-4B70-B3D3-EC2CCD1BF85F} = {D752A4A6-1E47-457C-80BA-DE20DB85956E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D131A59-5F7B-4947-9636-F6474F7A19FB}
+	EndGlobalSection
+EndGlobal
