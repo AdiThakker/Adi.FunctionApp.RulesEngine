@@ -37,6 +37,28 @@ public class RulesBuilder : IRulesBuilder<RuleContext, RuleResult>
     private Func<RuleContext, bool> GenerateRuleCriteria(string criteria)
     {
         var paramExpression = Expression.Parameter(typeof(RuleContext), "context");
+        var criteriaBody = criteria.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+        (string[] Properties, string[] Values) parseExpressions = (criteriaBody[0].Split("-", StringSplitOptions.RemoveEmptyEntries), criteriaBody[2].Split("-", StringSplitOptions.RemoveEmptyEntries));
+        Expression bodyExpression = default;
+        for (int i = 0; i < parseExpressions.Properties.Length; i++)
+        {
+            Expression propertyExpression;
+            (Expression Left, Expression Right) expression = BuildPropertyAccessExpression(typeof(RuleContext), paramExpression, parseExpressions.Properties[i], parseExpressions.Values[i]);
+            if (criteriaBody[1].Equals("==", StringComparison.InvariantCulture))
+                propertyExpression = Expression.Equal(expression.Left, expression.Right);
+            else
+                propertyExpression = Expression.NotEqual(expression.Left, expression.Right);
+
+            bodyExpression = i == 0 ? propertyExpression : Expression.AndAlso(bodyExpression, propertyExpression);
+        }
+        
         return Expression.Lambda<Func<RuleContext, bool>>(default, paramExpression).Compile();
+
+        (Expression, Expression) BuildPropertyAccessExpression(Type type, ParameterExpression paramExpression, string propertyName, string propertyValue)
+        {
+            return (type.GetProperty(propertyName) != null)
+                ? (Expression.Property(paramExpression, propertyName), Expression.Constant(propertyValue, typeof(string)))
+                : (Expression.Property(Expression.Property(paramExpression, "Parameters"), "Item", Expression.Constant(propertyValue, typeof(string))), Expression.Constant(propertyValue, typeof(string)));
+        }
     }
 }
