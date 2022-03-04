@@ -52,13 +52,13 @@ public class RulesBuilder : IRulesBuilder<RuleContext, RuleResult>
             bodyExpression = i == 0 ? propertyExpression : Expression.AndAlso(bodyExpression, propertyExpression);
         }
         
-        return Expression.Lambda<Func<RuleContext, bool>>(default, paramExpression).Compile();
+        return Expression.Lambda<Func<RuleContext, bool>>(bodyExpression, paramExpression).Compile();
 
         (Expression, Expression) BuildPropertyAccessExpression(Type type, ParameterExpression paramExpression, string propertyName, string propertyValue)
         {
             return (type.GetProperty(propertyName) != null)
                 ? (Expression.Property(paramExpression, propertyName), Expression.Constant(propertyValue, typeof(string)))
-                : (Expression.Property(Expression.Property(paramExpression, "Parameters"), "Item", Expression.Constant(propertyValue, typeof(string))), Expression.Constant(propertyValue, typeof(string)));
+                : (Expression.Property(Expression.Property(paramExpression, "Parameters"), "Item", Expression.Constant(propertyName, typeof(string))), Expression.Constant(propertyValue, typeof(string)));
         }
     }
 }

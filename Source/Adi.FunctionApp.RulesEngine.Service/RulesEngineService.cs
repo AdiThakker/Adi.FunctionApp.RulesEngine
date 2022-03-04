@@ -14,6 +14,8 @@ using Adi.FunctionApp.RulesEngine.Domain.Executor;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Attributes;
+using System.Net;
 
 namespace Adi.FunctionApp.RulesEngine.Service
 {
@@ -31,15 +33,17 @@ namespace Adi.FunctionApp.RulesEngine.Service
         }
 
         [FunctionName("Dispatcher")]
+        [OpenApiOperation(operationId: "Dispatcher", tags: new[] { "service" })]
+        [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "text/plain", bodyType: typeof(string), Description = "The OK response")]
         public async Task<IActionResult> Dispatcher(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = "/{service}")] HttpRequest req, string service, ILogger log)
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = "{service}")] HttpRequest req, string service, ILogger log)
         {
             log.LogInformation($"Received request for {service}");
 
             var response = service switch
             {
-                "AccountService" => rulesExecutor.Execute(new RuleContext() { Source = "AlarmService" }).Aggregate(new StringBuilder(), (results, result) => results.AppendLine(result.Result.Status)).ToString(),
-                "OrderService" => rulesExecutor.Execute(new RuleContext() { Source = "OrderService", Parameters = new Dictionary<string, string> { { "Error", "QuantityError" } } }).Aggregate(new StringBuilder(), (results, result) => results.AppendLine(result.Result.Status)).ToString(),
+                "AccountService" => rulesExecutor.Execute(new RuleContext() { Source = "Account" }).Aggregate(new StringBuilder(), (results, result) => results.AppendLine(result.Result.Status)).ToString(),
+                "OrderService" => rulesExecutor.Execute(new RuleContext() { Source = "Order", Parameters = new Dictionary<string, string> { { "Error", "QuantityError" } } }).Aggregate(new StringBuilder(), (results, result) => results.AppendLine(result.Result.Status)).ToString(),
                 _ => "Invalid request"
             };
 

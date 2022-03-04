@@ -8,7 +8,7 @@ public class ForwardRule : IRule<RuleContext, RuleResult>
 {
     public Task<RuleResult> ExecuteAsync(RuleContext input)
     {
-        return Task.FromResult(new RuleResult(input, "Forwarded"));
+        return Task.FromResult(new RuleResult(input, $"{input.Source} Forwarded"));
     }
 }
 

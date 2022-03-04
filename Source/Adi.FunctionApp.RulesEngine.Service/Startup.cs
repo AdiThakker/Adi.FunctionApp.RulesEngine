@@ -18,7 +18,6 @@ namespace Adi.FunctionApp.RulesEngine.Service
 
     public class Startup : FunctionsStartup
     {
-
         public override void ConfigureAppConfiguration(IFunctionsConfigurationBuilder builder)
         {
             if (builder is null)
