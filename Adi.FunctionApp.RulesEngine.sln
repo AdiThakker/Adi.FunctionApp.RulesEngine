@@ -9,22 +9,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{22707B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{D752A4A6-1E47-457C-80BA-DE20DB85956E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".template.config", ".template.config", "{1CA4EFF2-0B7B-42A9-AC1C-47B6971EA43B}"
-	ProjectSection(SolutionItems) = preProject
-		.template.config\template.json = .template.config\template.json
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adi.FunctionApp.RulesEngine.Documentation", "Documentation\Adi.FunctionApp.RulesEngine.Documentation\Adi.FunctionApp.RulesEngine.Documentation.csproj", "{2D88F919-7CD9-4CF8-A7BF-4ED37D35121F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adi.FunctionApp.RulesEngine.Documentation", "Documentation\Adi.FunctionApp.RulesEngine.Documentation\Adi.FunctionApp.RulesEngine.Documentation.csproj", "{2D88F919-7CD9-4CF8-A7BF-4ED37D35121F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{47741AE8-B326-4209-9774-02C46E652781}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adi.FunctionApp.RulesEngine.Service", "Source\Adi.FunctionApp.RulesEngine.Service\Adi.FunctionApp.RulesEngine.Service.csproj", "{CA2F4F04-C1CE-4654-A170-CB5118F0016C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adi.FunctionApp.RulesEngine.Service", "Source\Adi.FunctionApp.RulesEngine.Service\Adi.FunctionApp.RulesEngine.Service.csproj", "{CA2F4F04-C1CE-4654-A170-CB5118F0016C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adi.FunctionApp.RulesEngine.Domain", "Source\Shared\Adi.FunctionApp.RulesEngine.Domain\Adi.FunctionApp.RulesEngine.Domain.csproj", "{05F5B66C-6567-404F-8BD3-35C177921E26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adi.FunctionApp.RulesEngine.Domain", "Source\Shared\Adi.FunctionApp.RulesEngine.Domain\Adi.FunctionApp.RulesEngine.Domain.csproj", "{05F5B66C-6567-404F-8BD3-35C177921E26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adi.FunctionApp.RulesEngine.IntegrationTest", "Testing\Adi.FunctionApp.RulesEngine.IntegrationTest\Adi.FunctionApp.RulesEngine.IntegrationTest.csproj", "{DC6ED152-819C-4210-860E-8D11377D6F88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adi.FunctionApp.RulesEngine.IntegrationTest", "Testing\Adi.FunctionApp.RulesEngine.IntegrationTest\Adi.FunctionApp.RulesEngine.IntegrationTest.csproj", "{DC6ED152-819C-4210-860E-8D11377D6F88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adi.FunctionApp.RulesEngine.UnitTest", "Testing\Adi.FunctionApp.RulesEngine.UnitTest\Adi.FunctionApp.RulesEngine.UnitTest.csproj", "{473B8C62-1E29-4B70-B3D3-EC2CCD1BF85F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adi.FunctionApp.RulesEngine.UnitTest", "Testing\Adi.FunctionApp.RulesEngine.UnitTest\Adi.FunctionApp.RulesEngine.UnitTest.csproj", "{473B8C62-1E29-4B70-B3D3-EC2CCD1BF85F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CD5526C1-55BD-4D4F-918E-DA66CBF2AA65}"
 	ProjectSection(SolutionItems) = preProject
