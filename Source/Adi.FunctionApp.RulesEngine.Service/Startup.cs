@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using System.IO;
 using Adi.FunctionApp.RulesEngine.Domain.Builder;
+using Adi.FunctionApp.RulesEngine.Domain.Executor;
 using Adi.FunctionApp.RulesEngine.Domain.Interfaces;
 using Adi.FunctionApp.RulesEngine.Domain.Models;
 using Adi.FunctionApp.RulesEngine.Domain.Rules;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-[assembly:FunctionsStartup(typeof(Adi.FunctionApp.RulesEngine.Service.Startup))]
+[assembly: FunctionsStartup(typeof(Adi.FunctionApp.RulesEngine.Service.Startup))]
 namespace Adi.FunctionApp.RulesEngine.Service
 {
 
@@ -42,7 +44,7 @@ namespace Adi.FunctionApp.RulesEngine.Service
             builder.Services.AddTransient(typeof(EscalateRule));
 
             // Register Builder
-            builder.Services.AddOptions<RulesConfiguration>().Configure<IConfiguration>((settings, configuration) => configuration.GetSection(nameof(RulesConfiguration)).Bind(settings));  
+            builder.Services.AddOptions<RulesConfiguration>().Configure<IConfiguration>((settings, configuration) => configuration.GetSection(nameof(RulesConfiguration)).Bind(settings));
             builder.Services.AddSingleton<IRulesBuilder<RuleContext, RuleResult>>(sp =>
             {
                 var configuration = sp.GetRequiredService<IOptions<RulesConfiguration>>();
@@ -55,10 +57,11 @@ namespace Adi.FunctionApp.RulesEngine.Service
             });
 
             // Register Executor
+            builder.Services.AddSingleton<IRulesExecutor<RuleContext, RuleResult>>(sp =>
+            {
+                return new RulesExecutor(sp.GetRequiredService<IRulesBuilder<RuleContext, RuleResult>>(), sp.GetRequiredService<ILogger<RulesExecutor>>());     
+            });
 
-
-            // TODO Register Dependencies
-            throw new System.NotImplementedException();
         }
     }
 }
