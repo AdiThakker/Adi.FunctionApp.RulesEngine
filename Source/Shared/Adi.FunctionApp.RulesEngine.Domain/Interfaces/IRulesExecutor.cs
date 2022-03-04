@@ -2,6 +2,6 @@
 
 public interface IRulesExecutor<TInput, TResult>
 {
-    public IEnumerable<Task<TResult>> ExecuteAsync(TInput input);
+    public IEnumerable<Task<TResult>> Execute(TInput input);
 }
 

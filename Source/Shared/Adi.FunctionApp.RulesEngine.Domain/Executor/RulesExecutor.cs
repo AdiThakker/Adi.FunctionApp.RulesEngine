@@ -26,7 +26,7 @@ public class RulesExecutor : IRulesExecutor<RuleContext, RuleResult>
         
     }
 
-    public IEnumerable<Task<RuleResult>> ExecuteAsync(RuleContext input)
+    public IEnumerable<Task<RuleResult>> Execute(RuleContext input)
     {
         IEnumerable<IRule<RuleContext,RuleResult>>? GetRulesToExecute(RuleContext input)
         {
